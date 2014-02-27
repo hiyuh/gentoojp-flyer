@@ -1,0 +1,203 @@
+\documentclass[10pt,foldmark,notumble]{leaflet}
+\renewcommand*\foldmarkrule{.3mm}
+\renewcommand*\foldmarklength{5mm}
+
+\usepackage{mathptmx}
+\usepackage{url}
+\usepackage{ascmac}
+\usepackage{fancybox}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+% NOTE: Copy from "2. Main Gentoo web colors"
+%       http://www.gentoo.org/proj/en/desktop/artwork/colors.xml
+\definecolor{GentooDarkPurple}{HTML}{45347B}
+\definecolor{GentooPurple}{HTML}{7A5ADA}
+\definecolor{GentooLightPurple}{HTML}{A0A0F0}
+\definecolor{GentooGray}{HTML}{DDDAEC}
+\definecolor{GentooLighterPurple}{HTML}{DDDDFF}
+\definecolor{GentooGreen}{HTML}{00FF00}
+\definecolor{GentooBlack}{HTML}{000000}
+\definecolor{GentooWhite}{HTML}{FFFFFF}
+\definecolor{GentooLightGreen}{HTML}{BBFFBB}
+\definecolor{GentooLightYellow}{HTML}{FFFFBB}
+\definecolor{GentooLightRed}{HTML}{FFBBBB}
+
+\title{\bf Get Gentoo!}
+\author{\bf GentooJP}
+\date{\bf February 28 -- March 1, 2014 }
+
+% FIXME: \includesvg does not works properly on my LaTeX env...
+\AddToBackground{1}{
+	\put(0,195){\includegraphics[bb=520 0 1920 1200,clip=true,scale=0.2]{gentoo-10-1920x1200.jpg}}}
+\AddToBackground{1}{
+	\put(115,530){\includegraphics[scale=0.1]{ripples-gblend.eps}}}
+\AddToBackground{1}{
+	\put(0,-200){\includegraphics[bb=0 0 705 1050, clip=true,scale=0.5]{portage-9999-1680x1050.png}}}
+\AddToBackground{2}{
+	\put(50,200){\includegraphics[scale=0.6]{larry-the-cow-full-udder.eps}}}
+\AddToBackground{2}{
+	\put(70,400){\bf \large Have you mooed today?}}
+\AddToBackground{3}{
+	\put(50,30){\includegraphics[bb=0 0 680 640, scale=0.95]{gentwoo_logo.pdf}}}
+\AddToBackground{4}{
+	\put(15,130){Walbrixは、Gentoo LinuxとGenTwooを応援しています。}}
+\AddToBackground{4}{
+	\put(20,73){\includegraphics[scale=0.42,clip=true]{walbrix_logo.eps}}}
+
+\AddToBackground{6}{
+	\put(0,0){\textcolor{GentooLighterPurple}{\rule{\paperwidth}{\paperheight}}}}
+\AddToBackground*{2}{
+	\put(\LenToUnit{.5\paperwidth},\LenToUnit{.5\paperheight}){%
+		\makebox(0,0)[c]{%
+			\resizebox{.9\paperwidth}{!}{\rotatebox{35.26}{%
+				\textsf{\textbf{\textcolor{GentooGray}{Get Gentoo!}}}}}}}}
+
+\CutLine*{1}
+\CutLine*{6}
+
+\begin{document}
+\maketitle
+
+% FIXME: Only page 1 shows page number, dunno why...
+\thispagestyle{empty}
+
+{\centering
+	\textcolor{GentooDarkPurple}{
+		{\bf \large Gentoo} \\
+		{コンパイルしつづけて、10年。} \\
+		{\small ミラーサイトから無料でダウンロードできます。} \\
+		\vspace{2mm}
+		\ovalbox{{\small 今すぐインストール}} \\
+	}
+	\vspace{70mm}
+	\textcolor{GentooWhite}{
+		{\bf \large Portage} \\
+		{最も先進的なパッケージの} \\
+		{マネジメントシステム。} \\
+		{\small
+			私たちはすべてのGentooユーザーに、
+			最新のバージョン，最先端のテクノロジー、最も堅牢なセキュリティーを体験してもらいたいと考えています。
+			そして私たちはそれを、Portageツリーをローリングリリースすることで可能にしました。
+			しかもミラーサイトからsyncできるので、手に入れるのはこれ以上なく簡単です。
+			Portageは、Gentooにも、Gentooを使うすべての人にも、さらなる大きな進化をもたらします。
+			新機能を見る〉
+		}
+	}
+}
+\newpage
+{\centering
+	\textcolor{GentooBlack}{
+		{\bf \large USEフラグ} \\
+		{すべては、あなたの選択。} \\
+		{\small
+			Gentooのパッケージマネジメントシステムは、
+			あなたの選択ですべてのコンピュータと
+			ソフトウェアに搭載されているテクノロジーを
+			最大限に活用できるように設計されています。
+			だから、すべてがあなたの思い通りに機能するのです。
+			Portageツリーには、様々なことができる、
+			多くのパワフルなパッケージが収録されています。
+			しかも、これらのパッケージの依存関係もしっかり管理します。
+			さらに詳しく〉
+		} \\
+	}
+}
+\newpage
+{\centering
+	\textcolor{GentooBlack}{
+		{\bf \large GenTwoo} \\
+		{ソーシャルでつながる、ビルドクラスタ。} \\
+		{\small
+			Gentooを使っていると、ふと思う。
+			「新しいバージョンがパッケージされたけど、みんなは使っているかな？」
+			「コンパイルが失敗したけど、これってわたしだけ？」
+			GenTwooを使えば、それはきっと楽しい話題に変わります。
+			さらに詳しく〉
+		} \\
+	}
+}
+\newpage
+\section{GenTwooの使い方}
+	\begin{enumerate}
+		\item Betagarden Overlayを追加します。 \\
+			Overlayについてわからなければ、
+			Gentoo Overlay: ユーザーズ・ガイド
+			\footnote{\url{http://www.gentoo.org/proj/en/overlays/userguide.xml}}
+			\footnote{\url{http://www.gentoo.org/proj/ja/overlays/userguide.xml}}
+			を参照してください。
+		\item \verb|emerge app-portage/gentwoo|を実行します。 \\
+			GenTwooのスクリプトと設定ファイルがインストールされます。
+		\item GenTwooの設定ファイル(\verb|/etc/gentwoo.conf|)を編集します。
+			\begin{itemize}
+				\item \verb|USER| \\
+					TwitterのログインIDを設定します。
+				\item \verb|TOKEN| \\
+					token
+					\footnote{\url{http://gentwoo.elisp.net/my/key}}
+					を設定します。
+				\item \verb|UPLOAD_LOG| \\
+					Portageの簡単なログをアップロードするかどうかを設定します。
+					(\verb|True|または\verb|False|)
+				\item \verb|UPLOAG_ERROR_LOG| \\
+					Portageがエラーした時に完全なエラーログをアップロードするかどうかを設定します。
+					(\verb|True|または\verb|False|)
+			\end{itemize}
+		\item PortageからGenTwooのスクリプトが起動されるように
+			Portageの設定ファイル(/etc/make.conf)を編集します。
+			\begin{itemize}
+				\item \verb|PORTAGE_ELOG_CLASSES="log warn error qa"|
+				\item \verb|PORTAGE_ELOG_SYSTEM="custom:* echo mail"|
+				\item \verb|PORTAGE_ELOG_COMMAND="/usr/bin/gentwoo \| \\
+					\hspace{25mm} \verb|'${PACKAGE}' '${LOGFILE}'"|
+			\end{itemize}
+		\item あとはコンパイルするだけ!!
+	\end{enumerate}
+\newpage
+\section{リンク}
+\begin{itemize}
+	\item Gentoo.org \\
+		\url{http://www.gentoo.org}
+		\begin{itemize}
+			\item Gentoo Linux Graphics \\
+				\url{http://www.gentoo.org/main/en/graphics.xml}
+		\end{itemize}
+	\item GentooJP \\
+		\url{http://www.gentoo.gr.jp}
+		\begin{itemize}
+			\item スポンサー \\
+				株式会社びぎねっと \\
+				\url{http://Begi.net}
+			\item OSC2014 Tokyo/Spring 展示 \\
+				\verb|@aliceinwire| \\
+				\url{http://twitter.com/aliceinwire}
+			\item サーバー管理 \\
+				\verb|@nabeken|, \verb|@kjm| \\
+				\url{http://twitter.com/nabeken} \\
+				\url{http://twitter.com/kjm}
+			\item エラい人 \\
+				\verb|@masatomon|, \verb|@matsuu| \\
+				\url{http://twitter.com/masatomon} \\
+				\url{http://twitter.com/matsuu}
+			\item チラシ \\
+				\verb|@hiyuh| \\
+				\url{http://twitter.com/hiyuh}
+		\end{itemize}
+	\item GenTwoo \\
+		\url{http://gentwoo.elisp.net}
+		\begin{itemize}
+			\item スポンサー \\
+				Gentoo Linuxと Xenをベースに作られた日本語だけで操作できる仮想化OS Walbrix \\
+				\url{http://walbrix.net}
+			\item 作った人 \\
+				\verb|@naota344| \\
+				\url{http://twitter.com/naota344}
+			\item レポジトリ \\
+				\verb|@unarist| \\
+				\url{https://github.com/naota/gentwoo}
+			\item アイコン \\
+				\url{http://twitter.com/unarist}
+		\end{itemize}
+\end{itemize}
+
+\end{document}
