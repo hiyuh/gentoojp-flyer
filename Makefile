@@ -31,12 +31,11 @@ gentoojp-flyer.dvi:              \
 	gentoo-10-1920x1200.jpg      \
 	portage-9999-1680x1050.png   \
 	larry-the-cow-full-udder.eps \
-	gentwoo_logo.pdf             \
+	gentwoo_logo.eps             \
 	walbrix_logo.eps
+#	larry-the-cow-full-udder.svg
 #	ripples-gblend.svg
 
-# FIXME: The output grayscaled pdf has unexpected colored GenTwoo icon.
-#        Maybe, this is missing conversion b/c embedded pdf...
 gentoojp-flyer-grayscale.pdf: gentoojp-flyer.pdf
 	$(GS) \
 		-sDEVICE=pdfwrite \
