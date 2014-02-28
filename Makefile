@@ -4,6 +4,7 @@ ECHO    = echo
 RM      = rm -rf
 TEX2DVI = platex
 DVI2PDF = dvipdfmx
+GS      = gs
 
 TTEXS = gentoojp-flyer.tex
 TDVIS = $(TTEXS:.tex=.dvi)
@@ -33,6 +34,18 @@ gentoojp-flyer.dvi:              \
 	gentwoo_logo.pdf             \
 	walbrix_logo.eps
 #	ripples-gblend.svg
+
+# FIXME: The output grayscaled pdf has unexpected colored GenTwoo icon.
+#        Maybe, this is missing conversion b/c embedded pdf...
+gentoojp-flyer-grayscale.pdf: gentoojp-flyer.pdf
+	$(GS) \
+		-sDEVICE=pdfwrite \
+		-sProcessColorModel=DeviceGray \
+		-sColorConversionStrategy=Gray \
+		-dOverrideICC \
+		-dHaveTransparency=false \
+		-o $@ \
+		-f $<
 
 .PHONY: distclean clean info
 
